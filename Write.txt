@@ -1,0 +1,67 @@
+1.What is the structure of the API response?
+The REST Countries API returns an array of country objects. Each object contains information
+such as the country's name, flag, capital, region, population, languages, currencies, and more.
+
+Example:
+
+json
+{
+  "name": {
+    "common": "India",
+    "official": "Republic of India"
+  },
+  "flags": {
+    "png": "https://flagcdn.com/w320/in.png"
+  },
+  "capital": ["New Delhi"],
+  "region": "Asia",
+  "population": 1407563842,
+  "languages": {
+    "hin": "Hindi",
+    "eng": "English"
+  },
+  "currencies": {
+    "INR": {
+      "name": "Indian rupee",
+      "symbol": "₹"
+    }
+  }
+}
+
+Exact Property Paths
+
+**Flag Image URL**
+
+javascript
+country.flags.png
+
+**Languages**
+
+javascript
+country.languages
+
+To display all languages:
+
+javascript
+Object.values(country.languages).join(", ")
+
+**Currencies**
+
+javascript
+country.currencies
+
+To display all currency names:
+
+javascript
+Object.values(country.currencies)
+      .map(currency => currency.name)
+      .join(", ")
+
+2.Why fetch all data once and filter in JavaScript?
+Fetching all country data once when the page loads is better because it reduces the number of API requests,
+makes searching faster, reduces server load, and provides instant results to the user.
+If the API were called every time the user typed a character in the search box,
+it would create unnecessary network traffic and slower performance. Filtering locally in JavaScript gives a smoother user experience.
+
+3.What happens when the API call fails?
+When the API call fails, the code enters the catch block. The error is logged to the console, and an error message is displayed to the user.
