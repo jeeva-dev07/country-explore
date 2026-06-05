@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#search,
+#region-filter {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#search {
+    width: 300px;
+}
+
+#countries-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.country-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.country-card:hover {
+    transform: translateY(-5px);
+}
+
+.country-card img {
+    width: 100%;
+    min-height: 180px;
+    max-height: 180px;
+    object-fit: contain;
+}
+
+.country-card h3 {
+    padding: 10px 15px;
+    color: #222;
+}
+
+.country-card p {
+    padding: 0 15px 10px;
+    color: #555;
+}
+
+#country-detail {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+#country-detail img {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 20px auto;
+}
+
+#country-detail h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#country-detail p {
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+#backBtn {
+    padding: 10px 18px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#backBtn:hover {
+    background: #0056b3;
+}
+
+.loading,
+.error {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #search {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    #region-filter {
+        width: 100%;
+        max-width: 350px;
+    }
+}
